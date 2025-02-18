@@ -9,7 +9,7 @@ class PostController extends Controller
 {
     public function index()
     {
-        $posts = Post::with('categories')->get();
+        return response()->json(Post::with('categories')->get(), 200);
         // return view('posts.welcome', compact('posts'));
     }
 
