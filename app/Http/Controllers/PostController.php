@@ -9,7 +9,8 @@ class PostController extends Controller
 {
     public function index()
     {
-        return Post::with('categories')->get();
+        $posts = Post::with('categories')->get();
+        // return view('posts.welcome', compact('posts'));
     }
 
     public function store(Request $request)
